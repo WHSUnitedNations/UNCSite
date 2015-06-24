@@ -1,0 +1,111 @@
+﻿<html>
+<head>
+		<link rel="stylesheet" type="text/css" href="./StyleSheet.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+</head>
+<body>
+<div class="header">
+<h1>Westlake Model United Nations</h1>
+	<div class="social">
+		<a href="https://twitter.com/whsunc" class="twitter-follow-button" data-show-count="false">Follow @whsunc</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+</div> 
+<div class="nav">
+<ul>
+		<li id="nav"><a href="Home.html">Home</a></li>
+		<li id="nav"><a href="calender.html">Calender</a></li>
+		<li id="nav"><a href="current.html">Current Events</a></li>
+		<li id="nav"><a href="resources.html">Resources</a></li>
+		<li id="nav"><a href="photos.html">Photos</a></li>
+		<li id="nav"><a href="contact.html">Contact</a></li>
+</ul>
+</div>
+</div>
+<div class="content">
+<div class="nonequal">
+	<div class="larger">
+	<h2>What is Model United Nations?</h2>
+	<p>Model United Nations (or MUN) is an organization dedicated to international policy, debates, and events.</p><p> We focus on international disputes and major political occurances.</p>
+	</div>
+	<div class="smaller">
+	<h2>Random Quote!</h2>
+	<p id="quote">"Never give up, never surrender!"</p>
+	<cite id="why">-Galaxy Quest</cite>
+	</div>
+</div>
+<div class="column1">
+	<h2>Leadership</h2>
+	<ul>
+		<li id="co">Ashlynn Schiszler, Co-President</li>
+		<li id="co">Ethan Reese, Co-President</li>
+	</ul>
+</div>
+<div class="column2">
+	<h2>Events</h2>
+	<iframe src="https://www.google.com/calendar/embed?showTitle=0&amp;showNav=0&amp;showPrint=0&amp;showTabs=0&amp;showCalendars=0&amp;showTz=0&amp;mode=AGENDA&amp;height=200&amp;wkst=1&amp;bgcolor=%23FFFFFF&amp;src=whsunitednations%40gmail.com&amp;color=%2329527A&amp;ctz=America%2FDenver" style=" border-width:0 " width="320" height="150" frameborder="0" scrolling="no"></iframe>
+</div>
+<div class="column3">
+	<h3>Want to be added to the mailing list?</h3>
+	<p>What kind of emails would you like to recieve?</p>
+	<select name="Hmmm?" id="drop">
+		<option value="Select">Please select one of the options</option>
+		<option value="Club Announcements">Club Announcements</option>
+		<option value="Current Events Digest">Current Events Digest</option>
+		<option value="Both">Both</option>
+	</select>
+	<p>Input your email here.</p>
+	<input type="text" name="email" id="email" />
+	<input type="submit" name="Subscribe" value="Subscribe" id="Subscribe" />
+	<p id="response">A confirmation email will be send to ERROR</p>
+</div>
+</div>
+<div class="footer">
+<p>There is no copyright. Why are you looking down here?</p>
+</div>
+<script>
+	$('div').ready().fadeIn(1000);
+</script>
+<script>
+var quote;
+var cite;
+var rand;
+quote = ["Never give up, never surrender!","May the Force be with you.","If you cannot do great things, do small things in a great way.","Do, or do not. There is no try.","The finest steel has to go through the hottest fire.","Education is what remains after one has forgotten what they learned in school.","Speak softly and carry a big stick; you will go far.","Obstacles are those frightful things you see when you take your eyes off the goal.","We must use time as a tool, not as a couch.","In the end, people are persuaded not by what we say, but what they understand."];
+cite = ["-Galaxy Quest","-Han Solo","-Napoleon Hill","-Yoda","-Richard Nixon","-Albert Einstein","-Theodore Roosevelt","-Henry Ford","-John F. Kennedy","-John C. Maxwell"];
+var el = document.getElementById('quote');
+rand = Math.floor(Math.random()*10);
+el.innerHTML = quote[rand];
+var le = document.getElementById('why');
+le.innerHTML = cite[rand];
+var msg = document.getElementById('Subscribe');
+</script>
+<script>
+	//bullshiz
+function isEmail(email){
+        /^([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x22([^\x0d\x22\x5c\x80-\xff]|\x5c[\x00-\x7f])*\x22)(\x2e([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x22([^\x0d\x22\x5c\x80-\xff]|\x5c[\x00-\x7f])*\x22))*\x40([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x5b([^\x0d\x5b-\x5d\x80-\xff]|\x5c[\x00-\x7f])*\x5d)(\x2e([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x5b([^\x0d\x5b-\x5d\x80-\xff]|\x5c[\x00-\x7f])*\x5d))*$/.test(email);
+		return (email);
+}
+	$('#Subscribe').on('click', function(email){
+	var address, msg, drop;
+	//get value of dropdown menu then email
+	drop = $('#drop').val();
+	var address = $('#email').val();
+	//define email
+	msg = 'A confirmation email has been sent to ' + address +'.';
+	var el = document.getElementById('response');
+	//logic tree regarding response
+	if (address == '' && drop == 'Select'){
+		alert('Please enter your email and select an option from the dropdown menu.');
+		return false;	 
+	} else if (drop == 'Select') {
+		alert('Please select an option from the dropdown menu.');
+		return false;
+	} else if (address == '') {
+		alert('Please enter your email.');
+		return false;
+	} else {
+	el.innerHTML = msg;
+		$('#response').show("slow");
+	}
+	});
+</script>
+</html>
