@@ -1,17 +1,7 @@
 body {
 background-color: rgb(233,233,221);
-font-family: Ariel, Veranda, sans-serif;
-margin: .25em auto .25em auto;
 }
-h1 {
-color: darkblue;
-text-align: center;
-margin: .5em;
-text-transform: uppercase;}
-body {
-width: 90%;
-margin: 0 auto;
-}
+
 iframe{
 	padding-left: .9em;
 }
@@ -40,9 +30,6 @@ display: inline;
 padding: 5%;}
 #co {
 list-style-type: disc;}
-h2 {
-text-align: center;
-text-decoration: underline;}
 .nonequal {}
 .larger {
 float: left;
@@ -88,11 +75,11 @@ display: none;
 	padding: .25em;
 }
 div {
-	display: none;
+	
 }
 .social{
-	margin: .6%;
 	position: absolute;
-	right: 20px;
+	margin: 2%;
+	right: 0px;
 	top: 16px;
 }
