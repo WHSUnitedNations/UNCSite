@@ -4,37 +4,45 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
-
     <title>Westlake United Nations Club</title>
-
-    <!-- Bootstrap core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
-
-
     <link href="carousel.css" rel="stylesheet">
 		<link rel="stylesheet" type="text/css" href="StyleSheet.css">
-
 </head>
 <body>
 <div class="container-fluid">
 <h1>Westlake United Nations Club</h1>
-	<div class="social">
-		<a href="https://twitter.com/whsunc" class="twitter-follow-button" data-show-count="false">Follow us!</a>
-		<script> //twitter thingymabob
-		!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-	</div> 
+<!-- twitter thing-a-ma-bob -->
 </div>
-<div class="container-fluid">
-<ul>
-		<li id="nav"><a href="Home.html">Home</a></li>
-		<li id="nav"><a href="calender.html">Calender</a></li>
-		<li id="nav"><a href="current.html">Current Events</a></li>
-		<li id="nav"><a href="resources.html">Resources</a></li>
-		<li id="nav"><a href="photos.html">Photos</a></li>
-		<li id="nav"><a href="contact.html">Contact</a></li>
+	<div id="social">
+		<a href="https://twitter.com/whsunc" class="twitter-follow-button" data-show-count="false">Follow us!</a>
+		<script>
+		!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+	</div> <!-- twitter -->
+<nav class="navbar navbar-default">
+	 <div class="container-fluid">
+    <!-- grouped for better mobile display -->
+    <div class="navbar-header">
+		<a href="http://whs.alpineschools.org/"><img alt="thunder" src="thundersm.png"></a>
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+	 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+<ul class="nav navbar-nav">
+		<li><a href="Home.html">Home</a></li>
+		<li><a href="calender.html">Calender</a></li>
+		<li><a href="current.html">Current Events</a></li>
+		<li><a href="resources.html">Resources</a></li>
+		<li><a href="photos.html">Photos</a></li>
+		<li><a href="contact.html">Contact</a></li>
 </ul>
 </div>
+</div>
+</nav>
    <!-- Carousel
     ================================================== -->
     <div id="myCarousel" class="carousel slide" data-ride="carousel">
@@ -88,8 +96,8 @@
 <div class="content">
 <div class="container">
 	<div class="col-md-8">
-	<h2>What is Model United Nations?</h2>
-	<p>Model United Nations (or MUN) is an organization dedicated to international policy, debates, and events.</p><p> We focus on international disputes and major political occurances.</p>
+	<h2>How can I get involved?</h2>
+	<p>Shoot us off an <a href="contact.html">email</a> or just show up on any Tuesday to Mr. Robinson's Room at 2:30, or any meeting you see on our <a href="calender.html">calender</a>.</p>
 	</div>
 	<div class="col-md-4">
 	<h2>Random Quote!</h2>
@@ -112,27 +120,32 @@
 </div>
 <div class="col-md-4" id="busted">
 	<h3>Want to be added to the mailing list?</h3>
-	<p>What kind of emails would you like to recieve?</p>
-	<select name="Hmmm?" id="drop">
+	<h5>What kind of emails would you like to recieve?</h5>
+	<select class="btn btn-default dropdown-toggle" name="Hmmm?" id="drop">
 		<option value="Select">Please select one of the options</option>
 		<option value="Club Announcements">Club Announcements</option>
 		<option value="Current Events Digest">Current Events Digest</option>
 		<option value="Both">Both</option>
 	</select>
-	<p>Input your email here.</p>
-	<input type="text" name="email" id="email" />
-	<input type="submit" name="Subscribe" value="Subscribe" id="Subscribe" />
-	<p id="response">A confirmation email will be send to ERROR</p>
+	<h5>Type your email here.</h5>
+	<div class="form-group">
+	<input type="text" name="email" id="email" class="form-control" width="10px" placeholder="Email"/>
+	<input type="submit" name="Subscribe" value="Subscribe" class="btn btn-default" id="Subscribe" />
+	<p id="response">ERROR</p>
+	<div id="hidden">
+	<div class="alert alert-danger" role="alert">
+	<p id="mssg" class="hidde">Please select an option from the dropdown box and enter thine email.</p>
+	<p id="msssg" class="hidde">Please select an option from the dropdown box.</p>
+	<p id="mssssg" class="hidde">Please enter thine email.</p>
 	</div>
+	</div>
+	</div>
+	<div>
 </div>
 </div>
 <div class="container-fluid">
-<p>There is no copyright. Why are you looking down here?</p>
+<p>There is no copyright. Why are you looking down here? -<a href="privacy.html">Privacy Policy</a></p>
 </div>
-<script>
-	
-	$('div').ready().fadeIn(1000);
-</script>
 <script>
 var quote;
 var cite;
@@ -146,29 +159,38 @@ var le = document.getElementById('why');
 le.innerHTML = cite[rand];
 var msg = document.getElementById('Subscribe');
 </script>
+<!-- jquery cdn here because it breaks the carousel if it is higher, plus a slight speed boost. -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 <script>
-	//bullshiz
+	//bullshiz, not functioning atm
 function isEmail(email){
         /^([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x22([^\x0d\x22\x5c\x80-\xff]|\x5c[\x00-\x7f])*\x22)(\x2e([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x22([^\x0d\x22\x5c\x80-\xff]|\x5c[\x00-\x7f])*\x22))*\x40([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x5b([^\x0d\x5b-\x5d\x80-\xff]|\x5c[\x00-\x7f])*\x5d)(\x2e([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x5b([^\x0d\x5b-\x5d\x80-\xff]|\x5c[\x00-\x7f])*\x5d))*$/.test(email);
 		return (email);
 }
 	$('#Subscribe').on('click', function(email){
+		//removes previous errors or submissions
+		$('#hidden').hide();
+		$('.hidde').hide();
+	//declaring variables and getting values and such
 	var address, msg, drop;
-	//get value of dropdown menu then email
 	drop = $('#drop').val();
 	var address = $('#email').val();
-	//define email
-	msg = 'A confirmation email will be sent to ' + address +' within 24 hours.';
+	msg = 'A confirmation email will be sent to ' + address +' within 24 hours. That is, if this is a real email.';
+	var mssg, msssg, mssssg;
+	mssg = document.getElementById('mssg');
 	var el = document.getElementById('response');
 	//logic tree regarding response
 	if (address == '' && drop == 'Select'){
-		alert('Please enter your email and select an option from the dropdown menu.');
+		$('#hidden').show('slow');
+		$('#mssg').show("slow");
 		return false;	 
 	} else if (drop == 'Select') {
-		alert('Please select an option from the dropdown menu.');
+	$('#hidden').show('slow');
+		$('#msssg').show("slow");
 		return false;
 	} else if (address == '') {
-		alert('Please enter your email.');
+		$('#hidden').show('slow');
+		$('#mssssg').show("slow");
 		return false;
 	} else {
 	el.innerHTML = msg;
@@ -176,7 +198,7 @@ function isEmail(email){
 	}
 	});
 </script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+
 		  <script src="js/bootstrap.min.js"></script>
 		  <script src="js/busted.js"></script>
 </body>
