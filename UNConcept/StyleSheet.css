@@ -5,26 +5,13 @@ background-color: rgb(233,233,221);
 iframe{
 	padding-left: .9em;
 }
+th{
+	text-align: center;
+}
 .content { 
 overflow: auto;
 height: 100%;
 font-size: 90%;}
-.nav {
-background-color: lightblue;
-padding: .5em;
-margin: .6%;
-border: 2px solid darkblue;
-text-align: center;}
-.column1, .column2, .column3 {
-float: left;
-margin: .61%;
-padding: .5em;;
-background-color:rgb(218,213,197);
-width: 30.4%;
-height: 15em;
-border: 2px solid darkblue;
-min-width: 15em;
-}
 #nav {
 display: inline;
 padding: 5%;}
@@ -55,15 +42,7 @@ text-align: center;
 padding-top: 1.5em;}
 cite {
 padding: .5em}
-.footer {
-background-color: lightblue;
-border: 2px solid darkblue;
-margin: .61%;
-padding: .5em;
-width: 97.8%;
-float:left;
-bottom: 0;}
-#response {
+#response, #msg, #mssg, #msssg, #hidden, #mssssg {
 display: none;	
 }
 .books, .sites {
@@ -77,7 +56,7 @@ display: none;
 div {
 	
 }
-.social{
+#social{
 	position: absolute;
 	margin: 2%;
 	right: 0px;
