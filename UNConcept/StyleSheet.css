@@ -16,29 +16,6 @@ display: inline;
 padding: 5%;}
 #co {
 list-style-type: disc;}
-.nonequal {}
-.larger {
-float: left;
-margin: .61%;
-padding: .5em;;
-background-color:rgb(218,213,197);
-width: 63.81%;
-height: 15em;
-border: 2px solid darkblue;
-min-width: 15em;}
-.smaller {
-float: left;
-margin: .61%;
-padding: .5em;
-background-color: rgb(218,213,197);
-width: 30.4%;
-height: 15em;
-border: 2px solid darkblue;
-background: url(./un-logo_DS.jpg);
-color: black;}
-.smaller>p {
-text-align: center;
-padding-top: 1.5em;}
 cite {
 padding: .5em}
 #response, #msg, #mssg, #msssg, #hidden, #mssssg {
@@ -52,9 +29,7 @@ display: none;
 	background-color: rgb(218,213,197);
 	padding: .25em;
 }
-div {
-	
-}
+
 #social{
 	position: absolute;
 	margin: 2%;
